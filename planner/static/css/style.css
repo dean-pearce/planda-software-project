@@ -2,20 +2,20 @@
 
 :root {
     --main-bg-color: #e3e3e3; /* coral; */
-    --primary-color: #45b648;
-    --primary-hover: #53ea5b;
+    --primary-hover: #003d50;
+    --primary-color: #4b547f;
     --project-list-item-color: white;/* #c9df8a; */
     --project-list-item-hover: black; /* #667543; */
     --project-list-item-text: black;
     --project-list-item-text-hover: white;
-    --list-bg: #45b648; /* #275e2a; */
-    --list-title-color: #b9ffbe; /* #c3dbc4; */
-    --list-scrollbar: #338136; /* #1c431e; */
-    --task-text-color: #1c431e;
+    --list-bg: #003d50; /* #275e2a; */
+    --list-title-color: white; /* #c3dbc4; */
+    --list-scrollbar: grey; /* #1c431e; */
+    --task-text-color: black;
     --task-hover-bg: #dadada; /* #dadada; */
-    --add-task-text-color: #205323; /* #609f62; */
-    --add-task-hover-text-color: #205323; /* #1c431e; */
-    --add-task-hover-bg: #53ea5b; /* #39873c; */
+    --add-task-text-color: white; /* #609f62; */
+    --add-task-hover-text-color: white; /* #1c431e; */
+    --add-task-hover-bg: #4b547f; /* #39873c; */
 }
 
 /* dark -> light
