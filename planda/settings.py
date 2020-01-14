@@ -24,22 +24,24 @@ SECRET_KEY = 'm11zejs&i8umr^usp#u2&l2csmy9+6)*gk%qr!v0p8i5(yup5f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # changed
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'planner.apps.PlannerConfig',
+    'registration.apps.RegistrationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'homepage',
-    'authentic',
+    'crispy_forms',
     'dashboard',
+    'planner.templatetags.project_list_extras',
+    'planner.templatetags.project_extras',
 ]
 
 MIDDLEWARE = [
@@ -120,6 +122,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+AUTH_USER_MODEL = 'registration.User'
+
+LOGIN_REDIRECT_URL = 'planner:projects_listed'
+LOGOUT_REDIRECT_URL = '/'
+
+LOGIN_URL = '/'  # redirects here if not logged in
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -129,3 +140,13 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = (
   os.path.join(BASE_DIR, 'static/'),
 )
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_USE_SLL = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'plandasoftware@gmail.com'
+EMAIL_HOST_PASSWORD = 'ASDFGHJKL99'
+DEFAULT_FROM_EMAIL = 'plandasoftware@gmail.com'
